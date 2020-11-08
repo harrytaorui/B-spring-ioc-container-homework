@@ -1,19 +1,24 @@
 package com.thoughtworks.capability.demospringioccontainer;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
+@Scope(value="singleton")
 public class GreetingController {
 
+    private final GreetingService greetingService;
+
     @Autowired
-    private GreetingService greetingService;
+    public GreetingController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
 
     @GetMapping("/greet")
     public String greet() {
-        System.out.println(greetingService.hashCode());
         return greetingService.sayHi();
     }
 

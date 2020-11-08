@@ -10,6 +10,10 @@ import org.springframework.stereotype.Service;
         proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class GreetingService {
 
+    public GreetingService() {
+        System.out.println("1");
+    }
+
     String sayHi() {
         return "hello world";
     }
