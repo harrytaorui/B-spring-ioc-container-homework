@@ -8,7 +8,7 @@ public class Bar {
 
     private Foo foo;
 
-    public Bar(Foo foo) {
+    public Bar(@Lazy Foo foo) {
         this.foo = foo;
     }
 
