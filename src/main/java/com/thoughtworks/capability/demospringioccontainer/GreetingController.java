@@ -12,9 +12,15 @@ public class GreetingController implements ApplicationContextAware {
 
     private ApplicationContext applicationContext;
 
+    private GreetingService greetingService;
+
+    public GreetingController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
     @GetMapping("/greet")
     public String greet() {
-        GreetingService greetingService = applicationContext.getBean(GreetingService.class);
+        greetingService = applicationContext.getBean(GreetingService.class);
         return greetingService.sayHi();
     }
 

@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 @Scope("prototype")
 public class GreetingService {
 
+    public GreetingService() {
+        System.out.println("1");
+    }
     String sayHi() {
         return "hello world";
     }
