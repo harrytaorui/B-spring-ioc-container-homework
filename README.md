@@ -1,0 +1,4 @@
+@Component注解是通过classpath scanning的方式来摆脱xml定义bean，
+在使用第三方组件的情况下，无法读取其源代码并加上@Component注解，
+此时只能通过@bean注解将第三方类配置在@Configuration下，则可以在
+spring ioc容器中使用。
