@@ -9,15 +9,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DemoSpringIocContainerApplication implements ApplicationRunner {
 
-	@Autowired
-	private GreetingService greetingService;
+    @Autowired
+    private GreetingService greetingService;
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoSpringIocContainerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(DemoSpringIocContainerApplication.class, args);
+    }
 
-	@Override
-	public void run(ApplicationArguments args) throws Exception {
-		System.out.println(greetingService.sayHi());
-	}
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
+        System.out.println(greetingService.sayHi());
+    }
 }
