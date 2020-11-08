@@ -9,7 +9,6 @@ public class Bar {
 
     private Foo foo;
 
-    @Autowired
     public void setFoo(Foo foo) {
         this.foo = foo;
     }
